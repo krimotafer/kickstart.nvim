@@ -13,11 +13,20 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    -- Changed from 'reveal' to 'float toggle' for a better pop-up experience
+    { '\\', ':Neotree float toggle<CR>', desc = 'NeoTree Float Toggle', silent = true },
   },
   ---@module 'neo-tree'
   ---@type neotree.Config
   opts = {
+    -- ADDED: Global window settings for floating mode
+    window = {
+      position = 'float',
+      popup = {
+        size = { height = '80%', width = '50%' }, -- Adjust these percentages as you like
+        position = '50%', -- Centers the popup on screen
+      },
+    },
     filesystem = {
       window = {
         mappings = {
