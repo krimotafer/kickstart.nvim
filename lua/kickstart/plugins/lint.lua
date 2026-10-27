@@ -8,8 +8,9 @@ return {
   config = function()
     local lint = require 'lint'
     lint.linters_by_ft = {
-      markdown = { 'markdownlint' },
+      -- markdown = { 'markdownlint' }, -- Disabled: prevents noisy line length (MD013) & spacing errors
     }
+    lint.linters_by_ft['markdown'] = nil
 
     -- To allow other plugins to add linters to require('lint').linters_by_ft,
     -- instead set linters_by_ft like this:
